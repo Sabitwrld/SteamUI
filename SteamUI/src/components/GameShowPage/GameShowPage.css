@@ -1,0 +1,253 @@
+.game-show-page {
+  background-color: var(--medium-blue);
+  width: 100vw;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.game-show-title-wrapper {
+  width: 940px;
+  height: 74px;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0 16px 0;
+  box-sizing: border-box;
+}
+
+.game-show-title-wrapper div:first-child {
+  width: 50%;
+}
+
+.game-show-breadcrumbs {
+  font-size: 12px;
+  color: var(--60-gray);
+}
+
+.game-show-breadcrumbs a {
+  text-decoration: none;
+  color: var(--60-gray);
+}
+
+.game-show-breadcrumbs a:hover {
+  color: white;
+}
+
+.game-show-title-wrapper div:first-child h1 {
+  font-size: 26px;
+  margin-top: 6px;
+}
+
+.game-show-title-wrapper div:last-child {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.game-show-main-box-wide-wrapper {
+  width: 100%;
+  height: 444px;
+  position: absolute;
+  top: 156px;
+  display: flex;
+  justify-content: center;
+}
+
+.game-show-main-box {
+  width: 940px;
+  height: 432px;
+  padding-bottom: 12px;
+  background: linear-gradient(to right, transparent 50%, var(--40-tint) 100%);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Thank you Mario! */
+/* But our carousel CSS is in another file!  */
+
+.game-show-main-info-panel {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 324px;
+}
+
+.game-show-main-info-panel * {
+  font-family: inherit;
+}
+
+.game-show-main-info-panel img {
+  width: 100%;
+}
+
+.game-show-main-info-panel > p {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--83-blue-gray);
+  display: flex;
+  padding-top: 6px;
+  padding-right: 16px;
+  padding-bottom: 13px;
+}
+
+.game-info-table {
+  width: 100%;
+  margin-left: -2px;
+}
+
+.game-info-table * {
+  vertical-align: middle;
+}
+
+.game-info-table tr {
+  height: 15px;
+}
+
+.game-info-table th {
+  text-transform: uppercase;
+  font-size: 10px;
+  text-align: start;
+  width: 104px;
+  color: var(--40-blue-gray);
+}
+
+.game-info-table td {
+  font-size: 12px;
+}
+
+.review-summary:hover {
+  cursor: pointer;
+}
+
+.review-summary td, .developer-publisher {
+  color: var(--light-blue);
+}
+
+.review-summary td p {
+  display: inline;
+  margin-left: 4px;
+  font-size: 12px;
+
+  color: var(--40-blue-gray);
+}
+
+.release-date-row th, .release-date-row td {
+  height: 32px;
+}
+
+.release-date-row td {
+  color: var(--60-gray);
+}
+
+.developer-publisher:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.popular-tags {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--40-blue-gray);
+  display: flex;
+  flex-direction: column;
+}
+
+.user-tags-row {
+  margin-top: 4px;
+  height: 22px;
+  display: flex;
+}
+
+.user-tag-button {
+  height: 19px;
+  padding: 0 7px;
+  font-size: 11px;
+  margin: 0px 2px 3px 0;
+}
+
+.wishlist-buttons-bar {
+  margin-top: 444px;
+  width: 908px;
+  display: flex;
+  align-items: center;
+  background-color: var(--20-tint);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: var(--83-blue-gray);
+  padding: 16px;
+  margin-bottom: 32px;
+}
+
+.wishlist-buttons-bar a {
+  font: inherit;
+  text-decoration: none;
+  color: white;
+  margin-right: 3px;
+}
+
+.game-show-main-column-wrapper {
+  width: 940px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.game-show-main-left {
+  width: 616px;
+  height: 100%;
+}
+
+.buy-box {
+  width: 100%;
+  height: 72px;
+  box-sizing: border-box;
+  padding: 20px 16px 26px 16px;
+  background-image: linear-gradient(-60deg, var(--30-tint-white) 5%,var(--10-tint-white) 95%);
+  font-size: 21px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.buy-box-buttons {
+  background-color: black;
+  border-radius: 4px;
+  height: 32px;
+  padding: 2px 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  position: absolute;
+  right: 15px;
+  bottom: -16px;
+}
+
+.buy-box-buttons p {
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  color: var(--83-blue-gray);
+  padding: 0 10px;
+}
+
+.about-this-game {
+  width: 98%;
+  margin-top: 30px;
+  font-size: 14px;
+  color: var(--75-gray);
+  line-height: 1.5em;
+  white-space: pre-line;
+}
+
+.about-this-game h1 {
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.game-show-main-right {
+  width: 308px;
+  height: 100%;
+}

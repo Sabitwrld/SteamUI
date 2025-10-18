@@ -1,0 +1,89 @@
+.profile-button-wrapper {
+  position: relative;
+}
+
+.profile-button {
+  height: 24px;
+  background: none;
+  border: none;
+  margin-right: 6px;
+  color: var(--75-gray);
+  font-size: 11px;
+}
+
+.profile-button:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.small-avatar-wrapper {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--light-blue);
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.small-avatar {
+  width: 36px;
+  height: 36px;
+}
+
+.small-avatar:hover {
+  cursor: pointer;
+}
+
+.profile-button-dropdown {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--dark-blue);
+  width: 150px;
+  height: 132px;
+  padding: 6px 0 6px 0;
+  box-shadow: 0 0 12px black;
+  animation: fadein 2s;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.profile-button-dropdown * {
+  background: none;
+  border: none;
+  color: var(--75-gray);
+  display: flex;
+  align-items: center;
+  height: 27px;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 5px 12px 5px 12px;
+  margin: 0;
+  font-family: inherit;
+}
+
+.profile-button-dropdown a:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.profile-button-dropdown p {
+  color: var(--strong-orange);
+  margin-left: 4px;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+  margin-bottom: -4px;
+  height: 100%;
+  line-height: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.profile-button-dropdown a:hover p {
+  color: var(--light-orange);
+}

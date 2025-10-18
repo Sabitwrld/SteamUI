@@ -1,0 +1,71 @@
+.game-relevant {
+  width: 100%;
+  background: linear-gradient(to right, var(--20-tint) 0%,var(--50-tint) 100%);
+}
+
+.game-relevant h1 {
+  background-color: var(--20-tint);
+  height: 38px;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.game-relevant > div {
+  padding: 18px 16px;
+}
+
+/* Logged out */
+
+.game-relevant > div p {
+  color: var(--75-gray);
+  font-size: 14px;
+  line-height: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
+}
+
+.relevant-login-signup-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.relevant-login-signup-buttons a {
+  text-decoration: none;
+}
+
+.relevant-login-signup-buttons span {
+  margin: 0 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--75-gray);
+  font-size: 14px;
+}
+
+/* Logged in */
+.relevant-similar-games-tile {
+  color: var(--60-gray);
+  font-size: 14px;
+  padding: 0 7px;
+}
+
+.relevant-similar-games-tile > span {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.relevant-similar-games-tile i {
+  color: var(--helpful-green);
+  margin-left: -16px;
+  margin-right: 2px;
+}
+
+.relevant-similar-games-images {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.relevant-similar-games-images img {
+  width: 130px;
+}

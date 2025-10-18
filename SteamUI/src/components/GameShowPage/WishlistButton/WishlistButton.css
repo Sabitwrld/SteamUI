@@ -1,0 +1,8 @@
+.wishlist-button i {
+  margin: 0 8px 0 -6px;
+  font-size: 20px;
+}
+
+.wishlist-button.active {
+  background-color: color-mix(in hsl, var(--light-blue), transparent 40%);
+}

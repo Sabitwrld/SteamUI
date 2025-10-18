@@ -1,0 +1,141 @@
+.review-form-component {
+  width: 940px;
+  margin-bottom: 56px;
+}
+
+.review-form-component > header {
+  background: linear-gradient(
+    to right,
+    color-mix(in hsl, var(--light-orange), transparent 40%) 0%,
+    color-mix(in hsl, var(--dark-orange), transparent 40%) 100%
+  );
+  color: var(--light-orange);
+  font-size: 18px;
+  font-family: "Motiva Sans 300", Sans-serif;
+  line-height: 40px;
+  position: relative;
+  padding-left:84px;
+  box-sizing: border-box;
+  margin-bottom: 1px;
+}
+
+.in-library-flag {
+  position: absolute;
+  background-color: var(--light-orange);
+  height: 18px;
+  left: -8px;
+  top: 10px;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 2px black;
+  padding: 0 6px;
+  box-sizing: border-box;
+}
+
+.in-library-flag > i {
+  margin-right: 4px;
+}
+
+.review-form-main {
+  padding: 16px;
+  background-image: linear-gradient(-60deg, var(--30-tint-white) 5%,var(--10-tint-white) 95%);
+}
+
+.review-form-main > h1 {
+  font-family: 'Motiva Sans 300', sans-serif;
+  color: var(--light-blue);
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.review-form-main > p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--60-gray);
+}
+
+.review-form-main > h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--83-blue-gray);
+  font-size: 12px;
+  margin-top: 16px;
+}
+
+.review-form-stats {
+  padding-bottom: 16px;
+  border-bottom: 1px solid black;
+  margin-bottom: 16px;
+}
+
+.review-form-wrapper {
+  margin-top: 16px;
+  display: flex;
+  padding-right: 8px;
+}
+
+.review-form-wrapper > a {
+  width: 92px;
+  height: 92px;
+}
+
+.review-form-wrapper > a > img {
+  width: 92px;
+  height: 92px;
+  border: 2px solid var(--neon-blue);
+}
+
+/* thumbs up and thumbs down styling */
+.review-form-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 8px 0 16px 8px;
+}
+
+.review-form-thumb > i {
+  font-size: 34px;
+}
+
+.review-form-thumb.thumbs-up {
+  background: linear-gradient(var(--light-blue-thumb), var(--dark-blue-thumb));
+  color: var(--light-blue);
+}
+
+.review-form-thumb.thumbs-down {
+  background: linear-gradient(var(--light-red-thumb), var(--dark-red-thumb));
+  color: var(--main-red-thumb);
+}
+
+.review-form-thumb.fourty {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+}
+
+.review-form-thumb.fourty > i {
+  font-size: 30px;
+}
+
+.review-form-wrapper > h3 {
+  font-size: 14px;
+  color: var(--54-gray);
+  font-family: Arial, Helvetica, sans-serif;
+  width: 95%;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.review-form-wrapper > h3 > a {
+  color: white;
+}
+
+.review-form-wrapper > h3 > a:hover {
+  color: var(--light-blue);
+}

@@ -1,0 +1,98 @@
+.store-home-page {
+  background:
+    radial-gradient(
+      circle at 20% -6%,
+      color-mix(in hsl, var(--light-orange), transparent 50%) 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% -8%,
+      color-mix(in hsl, var(--neon-blue), transparent 60%) 0%,
+      var(--medium-blue) 25%
+    );
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.store-featured-box-wide-wrapper {
+  /* background: radial-gradient(
+    circle at 50% 150%,
+    color-mix(in hsl, var(--light-orange), transparent 30%) 0%,
+    transparent 75%
+  );
+  border-radius: 0 0 4px 4px; */
+  width: 70%;
+  height: 450px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.store-home-button {
+  position: absolute;
+  box-sizing: content-box;
+  top: 42%;
+  width: 23px;
+  height: 36px;
+  padding: 36px 11px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  opacity: 75%;
+}
+
+.store-home-button:hover {
+  cursor: pointer;
+}
+
+.button-left {
+  left: -46px;
+  background-image: linear-gradient(to left, transparent 5%, var(--40-tint-white) 225%);
+  border-radius: 2px 0 0 2px;
+}
+
+.button-left:hover {
+  opacity: 100%;
+}
+
+.button-right {
+  right: -46px;
+  background-image: linear-gradient(to right, transparent 5%, var(--40-tint-white) 225%);
+  border-radius: 0 2px 2px 0;
+}
+
+.button-right:hover {
+  opacity: 100%;
+}
+
+.store-sign-in-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 908px;
+  height: 130px;
+  padding: 16px;
+  background-color: var(--20-tint);
+  margin-bottom: 80px;
+  font-size: 15px;
+  color: var(--60-gray);
+}
+
+.store-sign-in-box > span > a {
+  color: white;
+}
+
+.store-sign-in-box > span > a:hover {
+  color: var(--light-blue);
+}

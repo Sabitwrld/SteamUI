@@ -1,0 +1,189 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 650px;
+  background-image: radial-gradient(transparent 0%, rgb(24, 26, 33, 80%) 100%), url(login_background.jpg);
+  background-position: center;
+}
+
+.login-form-wrapper {
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 174px;
+  padding: 26px 32px;
+  width: 636px;
+  height: 280px;
+}
+
+.login-form {
+  width: 412px;
+  height: 280px;
+  position: relative;
+}
+
+.login-form h1 {
+  position: absolute;
+  text-transform: uppercase;
+  font-family: 'Motiva Sans 100', sans-serif;
+  font-size: 32px;
+  color: white;
+  font-weight: 200;
+  top: -105px;
+  left: -10px;
+}
+
+.login-form-label {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'Motiva Sans 500', sans-serif;
+  display: flex;
+  margin-bottom: 4px;
+  width: 100%;
+  color: var(--light-orange);
+}
+
+.login-form-label:nth-of-type(2) {
+  color: var(--75-gray);
+  font-family: 'Motiva Sans 400', sans-serif;
+}
+
+.login-form input {
+  box-sizing: border-box;
+  padding: 0 10px 0 10px;
+  width: 412px;
+  height: 39px;
+  font-size: 15px;
+  background-color: var(--10-tint-white);
+  border: 1px solid transparent;
+  border-radius: 2px;
+  margin-bottom: 16px;
+  outline: none;
+  color: white;
+}
+
+.login-form input:hover {
+  background-color: var(--15-tint-white);
+}
+
+.remember-me {
+  font-size: 12px;
+  color: var(--75-gray);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 20px;
+}
+
+.remember-me input {
+  width: 16px;
+  margin: 0 6px 0 0;
+}
+
+.login-form button {
+  width: 270px;
+  height: 50px;
+  background: var(--neon-orange-gradient);
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  font-family: 'Motiva Sans 500', sans-serif;
+  font-size: 18px;
+  color: white;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 56px;
+}
+
+.login-form button:hover, .new-beta-feature button:hover {
+  background: var(--neon-orange-gradient-30);
+  cursor: pointer;
+}
+
+.login-form button:active, .new-beta-feature button:active {
+  background: var(--neon-orange-gradient-60);
+  outline: 1px solid var(--light-orange);
+}
+
+.error-border {
+  border: 1px solid var(--main-red-thumb) !important;
+}
+
+.login-form-errors {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin: 16px auto 0 auto;
+  bottom: 28px;
+  width: 412px;
+  height: 17px;
+  left: 0;
+  right: 0;
+}
+
+.login-form-errors li {
+  font-family: 'Motiva Sans 500', sans-serif;
+  font-size: 12px;
+  color: var(--main-red-thumb);
+}
+
+.cant-sign-in {
+  color: var(--75-gray);
+  font-size: 12px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.new-beta-feature {
+  width: 200px;
+  height: 280px;
+}
+
+.new-beta-feature div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2px;
+  padding: 16px 4px 16px 4px;
+  color: var(--75-gray);
+}
+
+.new-beta-feature div:first-of-type i {
+  font-size: 48px;
+  margin-right: 8px;
+}
+
+.new-beta-feature div:first-of-type p {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.new-beta-feature button {
+  border: none;
+  border-radius: 2px;
+  background-color: var(--10-tint-white);
+  color: white;
+  padding: 8px 16px;
+  font-family: 'Motiva Sans 700', sans-serif;
+}
+
+.new-beta-feature a {
+  color: var(--75-gray);
+  font-size: 12px;
+  display: flex;
+  margin-top: 16px;
+}
+
+.cant-sign-in:hover, .new-beta-feature a:hover {
+  color: var(--90-gray-text);
+}
