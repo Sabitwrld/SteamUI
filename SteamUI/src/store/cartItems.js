@@ -1,3 +1,5 @@
+// sabitwrld/steamui/SteamUI-e7ce9c382fc46f096255c58814740b9040d379dc/SteamUI/src/store/cartItems.js
+
 import csrfFetch from "./csrf";
 import { REMOVE_SESSION_USER } from "./session";
 
@@ -33,14 +35,17 @@ const clearCart = () => {
   };
 }
 
+// ** DƏYİŞİKLİK 1: Endpoint `/api/cart_items` -> `/api/Cart` olaraq dəyişdirilir **
 export const fetchCartItems = () => async (dispatch) => {
-  const res = await csrfFetch('/api/cart_items');
+  // Ən yaxşı praktikada, bu endpoint session token ilə cari istifadəçinin səbətini gətirməlidir.
+  const res = await csrfFetch('/api/Cart'); 
   const data = await res.json();
   dispatch(setCartItems(data));
 }
 
+// ** DƏYİŞİKLİK 2: Endpoint `/api/cart_items` -> `/api/Cart/additem` olaraq dəyişdirilir **
 export const createCartItem = (gameId) => async (dispatch) => {
-  const res = await csrfFetch('/api/cart_items', {
+  const res = await csrfFetch('/api/Cart/additem', {
     method: "POST",
     body: JSON.stringify({gameId: gameId})
   });
@@ -48,15 +53,17 @@ export const createCartItem = (gameId) => async (dispatch) => {
   dispatch(addCartItem(data));
 }
 
+// ** DƏYİŞİKLİK 3: Endpoint `/api/cart_items/{id}` -> `/api/Cart/removeitem/{id}` olaraq dəyişdirilir (Fərziyyə) **
 export const deleteCartItem = (cartItemId) => async (dispatch) => {
-  await csrfFetch('/api/cart_items/' + cartItemId, {
+  await csrfFetch('/api/Cart/removeitem/' + cartItemId, {
     method: 'DELETE'
   });
   dispatch(removeCartItem(cartItemId));
 }
 
+// ** DƏYİŞİKLİK 4: Endpoint `/api/cart_items/all` -> `/api/Cart/clear` olaraq dəyişdirilir (Fərziyyə) **
 export const deleteAllCartItems = () => async (dispatch) => {
-  await csrfFetch('/api/cart_items/all', {
+  await csrfFetch('/api/Cart/clear', {
     method: 'DELETE'
   });
   dispatch(clearCart());

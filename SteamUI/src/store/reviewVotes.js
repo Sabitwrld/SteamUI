@@ -1,3 +1,5 @@
+// sabitwrld/steamui/SteamUI-e7ce9c382fc46f096255c58814740b9040d379dc/SteamUI/src/store/reviewVotes.js
+
 import csrfFetch from "./csrf";
 import { ADD_REVIEW, SET_REVIEWS } from "./reviews";
 
@@ -18,8 +20,9 @@ const removeReviewVote = (reviewVoteId) => {
   }
 }
 
+// ** DƏYİŞİKLİK 1: Endpoint `/api/reviews/{reviewId}/review_votes` -> `/api/ReviewVote` **
 export const createReviewVote = (reviewVote) => async (dispatch) => {
-  const res = await csrfFetch(`/api/reviews/${reviewVote.reviewId}/review_votes`, {
+  const res = await csrfFetch(`/api/ReviewVote`, {
     method: "POST",
     body: JSON.stringify(reviewVote)
   })
@@ -27,9 +30,10 @@ export const createReviewVote = (reviewVote) => async (dispatch) => {
   dispatch(addReviewVote(data));
 }
 
+// ** DƏYİŞİKLİK 2: Endpoint `/api/review_votes/{reviewVote.id}` -> `/api/ReviewVote/{reviewVote.id}` **
 export const updateReviewVote = (reviewVote) => async (dispatch) => {
   const updatedVote = {value: reviewVote.value}
-  const res = await csrfFetch(`/api/review_votes/${reviewVote.id}`, {
+  const res = await csrfFetch(`/api/ReviewVote/${reviewVote.id}`, {
     method: "PUT",
     body: JSON.stringify(updatedVote)
   });
@@ -37,8 +41,9 @@ export const updateReviewVote = (reviewVote) => async (dispatch) => {
   dispatch(addReviewVote(data));
 }
 
+// ** DƏYİŞİKLİK 3: Endpoint `/api/review_votes/{reviewVoteId}` -> `/api/ReviewVote/{reviewVoteId}` **
 export const deleteReviewVote = (reviewVoteId) => async (dispatch) => {
-  await csrfFetch(`/api/review_votes/${reviewVoteId}`, {
+  await csrfFetch(`/api/ReviewVote/${reviewVoteId}`, {
     method: "DELETE"
   });
   dispatch(removeReviewVote(reviewVoteId));

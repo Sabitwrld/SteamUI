@@ -1,3 +1,5 @@
+// sabitwrld/steamui/SteamUI-e7ce9c382fc46f096255c58814740b9040d379dc/SteamUI/src/store/reviews.js
+
 import csrfFetch from "./csrf";
 
 export const SET_REVIEWS = "reviews/SET_REVIEWS";
@@ -25,14 +27,16 @@ const removeReview = (reviewId) => {
   };
 }
 
+// ** DƏYİŞİKLİK 1: Endpoint `/api/games/{gameId}/reviews` -> `/api/Review?gameId={gameId}` **
 export const fetchReviews = (gameId) => async (dispatch) => {
-  const res = await csrfFetch(`/api/games/${gameId}/reviews`);
+  const res = await csrfFetch(`/api/Review?gameId=${gameId}`);
   const data = await res.json();
   dispatch(setReviews(data));
 }
 
+// ** DƏYİŞİKLİK 2: Endpoint `/api/games/{review.gameId}/reviews` -> `/api/Review` **
 export const createReview = (review) => async (dispatch) => {
-  const res = await csrfFetch(`/api/games/${review.gameId}/reviews`, {
+  const res = await csrfFetch(`/api/Review`, {
     method: "POST",
     body: JSON.stringify(review)
   });
@@ -40,8 +44,9 @@ export const createReview = (review) => async (dispatch) => {
   dispatch(addReview(data));
 }
 
+// ** DƏYİŞİKLİK 3: Endpoint `/api/reviews/{review.id}` -> `/api/Review/{review.id}` **
 export const updateReview = (review) => async (dispatch) => {
-  const res = await csrfFetch(`/api/reviews/${review.id}`, {
+  const res = await csrfFetch(`/api/Review/${review.id}`, {
     method: "PUT",
     body: JSON.stringify(review)
   });
@@ -50,8 +55,9 @@ export const updateReview = (review) => async (dispatch) => {
   dispatch(addReview(data));
 }
 
+// ** DƏYİŞİKLİK 4: Endpoint `/api/reviews/{reviewId}` -> `/api/Review/{reviewId}` **
 export const deleteReview = (reviewId) => async (dispatch) => {
-  await csrfFetch(`/api/reviews/${reviewId}`, {
+  await csrfFetch(`/api/Review/${reviewId}`, {
     method: 'DELETE'
   });
   dispatch(removeReview(reviewId));

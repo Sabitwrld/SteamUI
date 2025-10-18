@@ -1,3 +1,5 @@
+// sabitwrld/steamui/SteamUI-e7ce9c382fc46f096255c58814740b9040d379dc/SteamUI/src/store/wishlistItems.js
+
 import csrfFetch from "./csrf";
 import { REMOVE_SESSION_USER } from "./session";
 
@@ -28,14 +30,16 @@ const removeWishlistItem = (wishlistItemId) => {
   };
 }
 
+// ** DƏYİŞİKLİK 1: Endpoint `/api/wishlist_items/?user_id=` -> `/api/Wishlist/` olaraq dəyişdirilir **
 export const fetchWishlistItems = (userId, visiting = false) => async (dispatch) => {
-  const res = await csrfFetch('/api/wishlist_items/?user_id=' + userId);
+  const res = await csrfFetch('/api/Wishlist/' + userId);
   const data = await res.json();
   dispatch(setWishlistItems(data, visiting));
 }
 
+// ** DƏYİŞİKLİK 2: Endpoint `/api/wishlist_items` -> `/api/Wishlist` olaraq dəyişdirilir **
 export const createWishlistItem = (wishlistItem) => async (dispatch) => {
-  const res = await csrfFetch('/api/wishlist_items', {
+  const res = await csrfFetch('/api/Wishlist', {
     method: "POST",
     body: JSON.stringify(wishlistItem)
   });
@@ -43,8 +47,9 @@ export const createWishlistItem = (wishlistItem) => async (dispatch) => {
   dispatch(addWishlistItem(data));
 }
 
+// ** DƏYİŞİKLİK 3: Endpoint `/api/wishlist_items/{id}` -> `/api/Wishlist/{id}` olaraq dəyişdirilir **
 export const deleteWishlistItem = (wishlistItemId) => async (dispatch) => {
-  await csrfFetch('/api/wishlist_items/' + wishlistItemId, {
+  await csrfFetch('/api/Wishlist/' + wishlistItemId, {
     method: 'DELETE'
   });
   dispatch(removeWishlistItem(wishlistItemId));

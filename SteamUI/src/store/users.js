@@ -1,3 +1,5 @@
+// sabitwrld/steamui/SteamUI-e7ce9c382fc46f096255c58814740b9040d379dc/SteamUI/src/store/users.js
+
 import csrfFetch from "./csrf";
 import { ADD_REVIEW, SET_REVIEWS } from "./reviews";
 
@@ -10,12 +12,13 @@ const setUser = (user) => {
   };
 }
 
+// ** DƏYİŞİKLİK: `/api/users/nil?` -> `/api/users?` olaraq dəyişdirilir **
 export const fetchUser = (userParam) => async (dispatch) => {
   let res;
   if (typeof userParam === 'number') {
-    res = await csrfFetch('/api/users/nil?user_id=' + userParam);
+    res = await csrfFetch('/api/users?user_id=' + userParam);
   } else {
-    res = await csrfFetch('/api/users/nil?username=' + userParam)
+    res = await csrfFetch('/api/users?username=' + userParam)
   }
   const userData = await res.json();
   dispatch(setUser(userData));

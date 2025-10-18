@@ -1,3 +1,5 @@
+// sabitwrld/steamui/SteamUI-e7ce9c382fc46f096255c58814740b9040d379dc/SteamUI/src/store/games.js
+
 import { SET_CART_ITEMS } from "./cartItems";
 import csrfFetch from "./csrf";
 import { SET_LIBRARY_ITEMS, SET_OTHER_LIBRARY } from "./libraryItems";
@@ -28,14 +30,16 @@ const addGame = (game) => {
   };
 }
 
+// ** DƏYİŞİKLİK 1: Endpoint `/api/games` -> `/api/catalog/all` olaraq dəyişdirilir **
 export const fetchGames = () => async (dispatch) => {
-  const res = await csrfFetch('/api/games');
+  const res = await csrfFetch('/api/catalog/all'); 
   const games = await res.json(); // normalized, i.e. { id => {gameData}}
   dispatch(setGames(games));
 }
 
+// ** DƏYİŞİKLİK 2: Endpoint `/api/games/` + gameId -> `/api/catalog/` + gameId olaraq dəyişdirilir **
 export const fetchGame = (gameId) => async (dispatch) => {
-  const res = await csrfFetch('/api/games/' + gameId);
+  const res = await csrfFetch('/api/catalog/' + gameId); 
   const game = await res.json(); // normalized, i.e. { id => {gameData}}
   dispatch(addGame(game));
 }
